@@ -7,8 +7,11 @@
 *Python 3.11+*
 
 Create a .env file with:
+```
 OPENAI_API_KEY="**YOUR OPENAI API KEY**"
+```
 
+Run the following in Terminal:
 ```
 cd python
 pip install -r requirements.txt
@@ -22,8 +25,11 @@ python3 index.py
 *Node.js 18+*
 
 Create a .env file with:
+```
 OPENAI_API_KEY="**YOUR OPENAI API KEY**"
+```
 
+Run the following in Terminal:
 ```
 node index.js
 ```
