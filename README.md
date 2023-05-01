@@ -15,9 +15,6 @@ Run the following in Terminal:
 ```
 cd python
 pip install -r requirements.txt
-```
-
-```
 python3 index.py
 ```
 
