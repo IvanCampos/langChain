@@ -1,10 +1,10 @@
+const fs = require("fs");
 const { ChatOpenAI } = require("langchain/chat_models/openai");
 const { RetrievalQAChain, LLMChain } = require("langchain/chains");
 const { HNSWLib } = require("langchain/vectorstores/hnswlib");
 const { OpenAIEmbeddings } = require("langchain/embeddings/openai");
 const { RecursiveCharacterTextSplitter } = require ("langchain/text_splitter");
-const fs = require("fs");
-
+const { PDFLoader } = require("langchain/document_loaders/fs/pdf");
 const {
   SystemMessagePromptTemplate,
   HumanMessagePromptTemplate,
@@ -65,7 +65,32 @@ async function chatWithTxt() {
   // Print the answer in green.
   let answer = res.text;
   console.log(`${green}${answer}${reset}`);
+  console.log("\n");
 };
+
+async function chatWithPDF() {
+  // Initialize the LLM to use to answer the question.
+  const model = new ChatOpenAI({
+    model_name:"gpt-3.5-turbo",
+  });
+
+  const loader = new PDFLoader("../data/pkd-metz.pdf", {splitPage: true});
+  const docs = await loader.load();
+
+  // Create a vector store from the documents.
+  const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings());
+
+  // Create a chain that uses the OpenAI LLM and HNSWLib vector store.
+  const chain = RetrievalQAChain.fromLLM(model, vectorStore.asRetriever());
+  const res = await chain.call({
+    query: "are we living in a computer generated simulation",
+  });
+
+  // Print the answer in green.
+  let answer = res.text;
+  console.log(`${green}${answer}${reset}`);
+}
 
 translateToBostonAccent();
 chatWithTxt();
+chatWithPDF();

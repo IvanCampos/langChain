@@ -13,6 +13,7 @@
     "fs": "^0.0.1-security",
     "hnswlib-node": "^1.4.2",
     "langchain": "^0.0.66",
-    "openai": "^3.2.1"
+    "openai": "^3.2.1",
+    "pdf-parse": "^1.1.1"
   }
 }
