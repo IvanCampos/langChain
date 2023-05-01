@@ -23,7 +23,11 @@ async function chatWithTxt() {
     const res = await chain.call({
       query: "What is the 2nd ammendment?",
     });
-    console.log("RESPONSE: " + res.text);
+
+    // Print the answer in green.
+    const green = "\x1b[32m";
+    const reset = "\x1b[0m";
+    console.log(`${green}${res.text}${reset}`);
   };
 
 chatWithTxt();
