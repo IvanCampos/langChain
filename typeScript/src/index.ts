@@ -47,7 +47,10 @@ async function translateToBostonAccent(): Promise<void> {
 }
 
 async function chatWithTxt(): Promise<void> {
-  const model = new OpenAI({modelName: "gpt-3.5-turbo"});
+  const model = new OpenAI({
+    modelName: "gpt-3.5-turbo",
+    temperature: 0,
+  });
   const text = fs.readFileSync("../data/us-constitution.txt", "utf8");
   const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 });
   const docs = await textSplitter.createDocuments([text]);
@@ -65,7 +68,10 @@ async function chatWithTxt(): Promise<void> {
 }
 
 async function chatWithPDF(): Promise<void> {
-  const model = new OpenAI({modelName:"gpt-3.5-turbo"});
+  const model = new OpenAI({
+    modelName:"gpt-3.5-turbo",
+    temperature: 0,
+  });
   const loader = new PDFLoader("../data/pkd-metz.pdf", { splitPages: true });
   const docs = await loader.load();
 
