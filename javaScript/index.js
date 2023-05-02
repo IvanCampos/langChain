@@ -91,6 +91,6 @@ async function chatWithPDF() {
   console.log(`${green}${answer}${reset}`);
 }
 
-translateToBostonAccent();
-chatWithTxt();
-chatWithPDF();
+await translateToBostonAccent();
+await chatWithTxt();
+await chatWithPDF();
