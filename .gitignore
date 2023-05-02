@@ -5,3 +5,8 @@ python/db
 javaScript/.env
 javaScript/node_modules
 javaScript/package-lock.json
+
+typeScript/.env
+typeScript/node_modules
+typeScript/package-lock.json
+typeScript/dist/*

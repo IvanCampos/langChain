@@ -30,3 +30,17 @@ Run the following in Terminal:
 ```
 node index.js
 ```
+
+
+## TypeScript
+*Node.js 18+*
+
+Create a .env file with:
+```
+OPENAI_API_KEY="**YOUR OPENAI API KEY**"
+```
+
+Run the following in Terminal:
+```
+npm run build && npm run start
+```
