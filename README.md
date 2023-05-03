@@ -8,7 +8,7 @@
 
 Create a .env file with:
 ```
-OPENAI_API_KEY="**YOUR OPENAI API KEY**"
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_GOES_HERE
 ```
 
 Run the following in Terminal:
@@ -23,7 +23,7 @@ python3 index.py
 
 Create a .env file with:
 ```
-OPENAI_API_KEY="**YOUR OPENAI API KEY**"
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_GOES_HERE
 ```
 
 Run the following in Terminal:
@@ -37,7 +37,7 @@ node index.js
 
 Create a .env file with:
 ```
-OPENAI_API_KEY="**YOUR OPENAI API KEY**"
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_GOES_HERE
 ```
 
 Run the following in Terminal:
